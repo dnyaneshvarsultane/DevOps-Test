@@ -1,0 +1,23 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+}
+
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIARENCZHYTG4QFJKVH"
+  secret_key = "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"
+}
+
+resource "aws_instance" "Terraform1" {
+  ami      = "ami-06984ea821ac0a879"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "DevOps"
+  }
+}
